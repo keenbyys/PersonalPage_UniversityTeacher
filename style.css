@@ -1,4 +1,10 @@
 :root {
+    --base-color-01: #192E47;
+    --base-color-02: #EBEBEB;
+    --base-color-03: #FFFFFF;
+    --base-color-04: #D9D9D9;
+    --base-color-05: #B2B2B2;
+    --base-color-06: #757575;
 
 }
 
@@ -10,10 +16,52 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-div, li, ul, p, h1, h2, h3, header, footer, a {
+body, div, li, ul, p, h1, h2, h3, header, footer, a {
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style-type: none;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    margin-top: 1%;
+    min-width: 1200px;
+}
+
+.div__container_nav {
+    display: flex;
+    justify-content: center;
+    background-color: #192E47;
+    margin: 0% 15%;
+    padding: 2%;
+    border-radius: 1.5rem;
+}
+
+.div__container_nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+}
+
+.div__container_nav li {
+    width: 150px;
+    text-align: center;
+}
+
+.div__container_nav a {
+    padding: 10% 25% 10% 25%;
+    border-radius: 3rem;
+    color: var(--base-color-03);
+    font-size: 25px;
+    transition: .2s;
+}
+
+.a__current_page, .div__container_nav a:hover {
+    background-color: var(--base-color-03);
+    color: var(--base-color-01) !important;
+    font-weight: 600;
 }

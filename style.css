@@ -10,7 +10,7 @@
 }
 
 .side_margin {
-    margin: 0% 15%;
+    margin: 0% 20%;
 }
 
 .no_margin_left {
@@ -82,7 +82,7 @@ header {
     padding-bottom: 1.5%;
 }
 
-.div__background_profile {
+.div__background_profile, .div__background_dls_profile {
     background-color: var(--base-color-03);
     display: flex;
     border-radius: 1.5rem;
@@ -102,7 +102,7 @@ header {
     opacity: .2;
 } 
 
-.div__list_text {
+.div__list {
     width: calc(100% - 30%);
     margin: 3% 0%;
     margin-right: 3%;
@@ -113,9 +113,68 @@ header {
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: 1%;
+    color: var(--base-color-01);
 }
 
 .div__text_pofile p {
     margin-left: 3%;
     font-size: 20px;
+    color: var(--base-color-06);
+}
+
+.div__container_btns {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.div__btn_profile {
+    width: 100%;
+    background-color: var(--base-color-01);
+    margin-top: 3%;
+    border-radius: 1rem;
+    transition: .2s;
+}
+
+.div__btn_profile a {
+    display: flex;
+    padding: 8%;
+    justify-content: center;
+    color: var(--base-color-02);
+    font-size: 25px;
+}
+
+.div__btn_profile:hover {
+    opacity: 0.8;
+}
+
+.div__background_dls_profile {
+    flex-wrap: wrap;
+    padding: 2%;
+}
+
+.div__text_dls_profile h2 {
+    font-size: 30px;
+    margin: .5% 0%;
+    color: var(--base-color-01);
+} 
+
+.div__text_dls_profile p {
+    font-size: 20px;
+    margin: 0% 0% 2% 0%;
+    color: var(--base-color-06);
+}
+
+footer {
+    display: flex;
+    gap: 5%;
+    margin-top: 3%;
+    padding: 4% 20%;
+    background-color: var(--base-color-01);
+}
+
+.div__footer_text {
+    width: 100%;
+    font-size: 20px;
+    color: var(--base-color-05);
 }

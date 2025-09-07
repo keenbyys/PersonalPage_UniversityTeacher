@@ -48,7 +48,7 @@ header {
     background-color: #192E47;
     margin: 0% 15%;
     padding: 2%;
-    border-radius: 1.5rem;
+    border-radius: 2vh;
     box-shadow: var(--base-shadow);
 }
 
@@ -85,7 +85,7 @@ header {
 .div__background_profile, .div__background_dls_profile {
     background-color: var(--base-color-03);
     display: flex;
-    border-radius: 1.5rem;
+    border-radius: 2vh;
     box-shadow: var(--base-shadow);
 }
 
@@ -94,7 +94,7 @@ header {
     /* width: 150px; */
     margin: 3%;
     padding: 8% 4%;
-    border-radius: 1rem;
+    border-radius: 2vh;
 }
 
 .div__image_profile img {
@@ -132,7 +132,7 @@ header {
     width: 100%;
     background-color: var(--base-color-01);
     margin-top: 3%;
-    border-radius: 1rem;
+    border-radius: 2vh;
     transition: .2s;
 }
 

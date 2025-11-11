@@ -90,7 +90,7 @@
 
         function getContent(node) {
             let text = node.textContent.trim().replace(/\s+/g, ' ');
-            return `Узел: ${node.tagName}${node.className ? '.' + node.className : ''}\nСодержимое: ${text || 'нет текста'}`;
+            return `Node: ${node.tagName}${node.className ? '.' + node.className : ''}\nContents: ${text || 'no text'}`;
         }
 
         function navigate(onFinish) {
@@ -111,7 +111,7 @@
             let message = currentContent + '\n';
 
             if (isEnd) {
-                message += '\n Вернуться назад или выйти? (OK - вернуться, Cancel - выйти)';
+                message += '\n Go back or exit? \n[OK]: go back \n[Cancel]: exit';
                 if (confirm(message)) {
                     walker.previousNode();
                     navigate(onFinish);
@@ -119,7 +119,7 @@
                     onFinish();
                 }
             } else if (isStart) {
-                message += '\n Продвинуться к следующему узлу или завершить работу? (OK - продвинуться, Cancel - завершить)';
+                message += '\n Move on to the next node or finish the job? \n[OK]: go back \n[Cancel]: exit';
                 if (confirm(message)) {
                     walker.nextNode();
                     navigate(onFinish);
@@ -127,7 +127,7 @@
                     onFinish();
                 }
             } else {
-                message += '\n Пройти дальше или вернуться? (OK - пройти дальше, Cancel - вернуться)';
+                message += '\n Should I go on or go back? \n[OK]: go back \n[Cancel]: exit';
                 if (confirm(message)) {
                     walker.nextNode();
                     navigate(onFinish);
@@ -139,7 +139,7 @@
         }
 
         navigate(function () {
-            alert('Работа завершена.');
+            alert('The work is complete.');
         });
     });
 </script>

@@ -84,4 +84,64 @@
     </footer>
 </body>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const walker = document.createTreeWalker(document.documentElement, NodeFilter.SHOW_ELEMENT);
+
+        function getContent(node) {
+            let text = node.textContent.trim().replace(/\s+/g, ' ');
+            return `Узел: ${node.tagName}${node.className ? '.' + node.className : ''}\nСодержимое: ${text || 'нет текста'}`;
+        }
+
+        function navigate(onFinish) {
+            const currentNode = walker.currentNode;
+            const currentContent = getContent(currentNode);
+
+            let temp = walker.currentNode;
+            let hasPrevious = walker.previousNode() !== null;
+            walker.currentNode = temp;
+
+            temp = walker.currentNode;
+            let hasNext = walker.nextNode() !== null;
+            walker.currentNode = temp;
+
+            let isStart = !hasPrevious;
+            let isEnd = !hasNext;
+
+            let message = currentContent + '\n';
+
+            if (isEnd) {
+                message += '\n Вернуться назад или выйти? (OK - вернуться, Cancel - выйти)';
+                if (confirm(message)) {
+                    walker.previousNode();
+                    navigate(onFinish);
+                } else {
+                    onFinish();
+                }
+            } else if (isStart) {
+                message += '\n Продвинуться к следующему узлу или завершить работу? (OK - продвинуться, Cancel - завершить)';
+                if (confirm(message)) {
+                    walker.nextNode();
+                    navigate(onFinish);
+                } else {
+                    onFinish();
+                }
+            } else {
+                message += '\n Пройти дальше или вернуться? (OK - пройти дальше, Cancel - вернуться)';
+                if (confirm(message)) {
+                    walker.nextNode();
+                    navigate(onFinish);
+                } else {
+                    walker.previousNode();
+                    navigate(onFinish);
+                }
+            }
+        }
+
+        navigate(function () {
+            alert('Работа завершена.');
+        });
+    });
+</script>
+
 </html>
